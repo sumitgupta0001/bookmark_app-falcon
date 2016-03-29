@@ -1,0 +1,56 @@
+
+<!doctype html>
+<html>
+    <head>
+    <title>Bootstrap layouts</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    
+
+        <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    </head>
+    <body>
+
+   
+
+
+<h1 >Hello </h1>
+
+<h2>Bookmarks available:
+
+</h2><br>
+{{temp}}
+
+<script type="text/javascript">
+function toggle(source){
+    checkboxes = document.getElementsByName('url');
+  for(var i=0, n=checkboxes.length;i<n;i++) {
+    checkboxes[i].checked = source.checked;
+  }
+}
+</script>
+
+ <form action='' method='post'  >
+  <input type="checkbox" name="all" id="all" onClick="toggle(this)" /> <label for='all'>Select All</label>
+
+
+<h2> Please choose the files to import</h2>
+
+<div >
+
+{%for i in url_list%}
+<li><input type="checkbox" name="url" value={{i}}> {{i}}</li><br>
+{%endfor%}
+
+</div>
+<br>
+<input type='submit' class="btn btn-success" name='submit'></input>
+
+
+
+</form>
+
+</body>
+</html> 
