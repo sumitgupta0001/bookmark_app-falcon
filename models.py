@@ -1,7 +1,8 @@
 import os
 from mongoengine import *
 
-final_mongo_host = "mongodb://admin:f2A57AI_dLqg@%s:%s/" % (os.environ['OPENSHIFT_MONGODB_DB_HOST'], os.environ['OPENSHIFT_MONGODB_DB_PORT'])
+final_mongo_host = "mongodb://0.0.0.0:27017" 
+
 connect('falconapp', host=final_mongo_host)
 
 
